@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ----------------------------- colores a usar ----------------------------- */
+/* color negro   #080707 */
+
+/* color gris oscuro #1A191A */
+
+/* color gris claro #474546 */
+
+/* color claro #D4D1D1 */
+
+/* color blanco FBFFFE */
+
+header{
+    background-color: #080707;
+}
+
+body{
+    background-color: #1A191A;
+}
