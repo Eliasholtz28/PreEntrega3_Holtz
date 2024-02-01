@@ -22,3 +22,91 @@ header{
 body{
     background-color: #1A191A;
 }
+
+.btnCarrito{
+    background-color: #1A191A;
+    border-color: #1A191A;
+}
+
+.btnCarrito:hover{
+    background-color: #474546;
+    border-color: #474546;
+}
+
+.btnOrdenado{
+    background-color: #474546;
+    border-color: #474546;
+}
+
+.btnOrdenado:hover{
+    background-color: #d4d1d1b0;
+    border-color: #d4d1d1b0;
+}
+
+.colorProducto{
+    background-color: #080707;
+}
+
+.btnColorProducto{
+    background-color: #474546;
+    border-color: #474546;
+}
+
+.btnColorProducto:hover{
+    background-color: #d4d1d1b0;
+    border-color: #d4d1d1b0;
+}
+
+.colorProducto h3{
+    color: #D4D1D1;
+}
+
+.colorProducto h4{
+    color: #D4D1D1;
+}
+
+.barraBuscar{
+    background-color: #D4D1D1;
+}
+
+.modal-content{
+    background-color: #1A191A;
+    color: #D4D1D1;
+}
+
+.modalColor th{
+    background-color: #1A191A;
+    color: #D4D1D1;
+}
+
+.modalColorJs td{
+    background-color: #1A191A;
+    color: #D4D1D1;
+}
+
+.textTotal{
+    font-size: 1rem;
+    font-weight: bold;
+
+}
+
+.btnModalClose{
+    background-color: #080707;
+    border-color: #080707;
+    color: #D4D1D1;
+
+}
+
+.btnModalSave{
+    background-color: #474546;
+    border-color: #474546;
+    color: white;
+
+}
+
+.btnModalSave:hover{
+    background-color: #d4d1d1b0;
+    border-color: #d4d1d1b0;
+    color: white;
+
+}

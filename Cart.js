@@ -19,6 +19,17 @@ class Cart {
     }
 
 
+    removeOneFromProduct(index) {
+        if (index >= 0 && index < this.cart.length) {
+            if (this.cart[index].units > 1) {
+                this.cart[index].units -= 1;
+            } else {
+                this.cart.splice(index, 1);
+            }
+        }
+    }
+
+
     getProducts(){
         return this.cart;
     }

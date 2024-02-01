@@ -66,11 +66,11 @@ const renderProducts = (list)=> {
         
         listProducts.innerHTML += //html
         `<div class="col-sm-4 col-md-3 mb-3">
-            <div class="card p-2">
+            <div class="card p-2 colorProducto">
                 <h3 class="text-center">${product.name}</h3>
                 <img class="img-fluid" src="${product.img}" alt="${product.name}">
                 <h4 class="text-center">$${product.price}</h4>
-                <button id="${product.id}" type="button" class="btn btn-primary btnAddCart">
+                <button id="${product.id}" type="button" class="btn btn-primary btnAddCart btnColorProducto">
                     <i class="bi bi-bag-plus"></i>Agregar al carrito
                 </button>
             </div>
@@ -91,21 +91,49 @@ const addToCart = ( e )=> {
     cartCount.innerText = cart.getCount();
 }
 
+const removeOneFromProduct = (event) => {
+    const index = event.currentTarget.dataset.bsIndex;
+    if (index !== undefined) {
+        cart.removeOneFromProduct(index);
+        renderCart(cart.getProducts());
+        cartCount.innerText = cart.getCount();
+        cartSum.innerText = cart.getSum();
+        localStorage.setItem('cart', JSON.stringify(cart.getProducts()));
+    } else {
+        console.error('No se pudo obtener el índice del producto a eliminar.');
+    }
+};
+
+
+
+
 
 const renderCart = (list) => {
     modalListProducts.innerHTML = '';
-    list.forEach( product => {
+    list.forEach( (product, index) => {
         modalListProducts.innerHTML += //html
         `
-            <tr>
+            <tr class="modalColorJs">
                 <td>${product.name}</td>
                 <td>${product.units}</td>
                 <td>$${product.price}</td>
                 <td>$${product.price * product.units}</td>
+                <td>
+                    <button class="btn btn-dark btnRemoveProduct" data-bs-index="${index}">
+                        <i class="bi bi-trash"></i> Eliminar
+                    </button>
+                </td>
 
             </tr>`
     })
+
+    const btnsRemoveProduct = document.querySelectorAll('.btnRemoveProduct');
+    btnsRemoveProduct.forEach(btn => {
+        btn.addEventListener('click', removeOneFromProduct); // Cambiado a removeOneFromProduct
+});
 }
+
+
 
 
 renderProducts(products)
